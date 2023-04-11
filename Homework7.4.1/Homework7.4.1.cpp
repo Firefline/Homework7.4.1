@@ -2,6 +2,9 @@
 //
 
 #include <iostream>
+#include "shape.h"
+#define _USE_MATH_DEFINES
+#include<cmath>
 
 int main(int argc, char** argv)
 {

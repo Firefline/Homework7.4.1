@@ -7,86 +7,53 @@ transform::transform(const Shape& sh)
 
 Shape transform::shift(int m, int n, int k)
 {
-	switch (shape.getType())
+	if (shape.getType() == 0 || shape.getType() == 1)
 	{
-	case Shape::line:
 		shape.x += m; shape.y += n;
-		break;
-	case Shape::sqr:
-		shape.x += m; shape.y += n;
-		break;
-	case Shape::cube:
+	}
+	else if (shape.getType() == 2)
+	{
 		shape.x += m; shape.y += n; shape.z += k;
-		break;
 	}
 	return shape;
 }
 
 Shape transform::scaleX(int a)
 {
-	switch (shape.getType())
+	if (shape.getType() == 0 || shape.getType() == 1 || shape.getType() == 2)
 	{
-	case Shape::line:
 		shape.x *= a;
-		break;
-	case Shape::sqr:
-		shape.x *= a;
-		break;
-	case Shape::cube:
-		shape.x *= a;
-		break;
 	}
 	return shape;
 }
 
 Shape transform::scaleY(int d)
 {
-	switch (shape.getType())
+	if (shape.getType() == 0 || shape.getType() == 1 || shape.getType() == 2)
 	{
-	case Shape::line:
 		shape.x *= d;
-		break;
-	case Shape::sqr:
-		shape.x *= d;
-		break;
-	case Shape::cube:
-		shape.x *= d;
-		break;
 	}
 	return shape;
 }
 
 Shape transform::scaleZ(int e)
 {
-	switch (shape.getType())
+	if (shape.getType() == 0 || shape.getType() == 1 || shape.getType() == 2)
 	{
-	case Shape::line:
 		shape.x *= e;
-		break;
-	case Shape::sqr:
-		shape.x *= e;
-		break;
-	case Shape::cube:
-		shape.x *= e;
-		break;
 	}
 	return shape;
 }
 
 Shape transform::scale(int s)
 {
-	switch (shape.getType())
+	if (shape.getType() == 0 || shape.getType() == 1)
 	{
-	case Shape::line:
 		shape.x /= s; shape.y /= s;
-		break;
-	case Shape::sqr:
-		shape.x /= s; shape.y /= s;
-		break;
-	case Shape::cube:
-		shape.x /= s; shape.y /= s; shape.z /= s;
-		break;
 	}
-
+	else if (shape.getType() == 2)
+	{
+		shape.x /= s; shape.y /= s; shape.z /= s;
+	}
 	return shape;
 }
